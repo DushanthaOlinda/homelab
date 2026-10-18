@@ -17,8 +17,6 @@
 - **Long transfers over Wi-Fi drop.** A 64 GB rsync died halfway with "broken pipe". Fixed with
   SSH keepalives (`ServerAliveInterval 30` in `~/.ssh/config`) and a retry loop
   (`until rsync ...; do sleep 15; done`); `--partial` meant nothing was lost.
-- **Editing a file in a public repo doesn't remove the old version.** It stays in the commit history.
-  Sensitive details meant deleting and recreating the repo with clean files. Check before the first push.
 - **Phone photos carry GPS coordinates.** Strip location data before publishing any photo of the setup.
 - **A loose Ethernet cable is a single point of failure.** A bumped cable dropped the server for
   3 seconds, which also means DNS for every device using AdGuard. Seat cables firmly; plan for a fallback.
