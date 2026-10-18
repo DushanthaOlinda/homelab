@@ -106,7 +106,7 @@ Secrets (API tokens, passwords, bot tokens) are **never** committed. See `.gitig
 
 ## The setup
 
-![The "data centre"](docs/images/hardware.jpg)
+![The "data centre"](docs/images/hardware.jpeg)
 
 | Proxmox | Grafana |
 |---|---|
