@@ -1,0 +1,9 @@
+# Show list for build-wd-views.sh
+# Real list lives on the server at /etc/media-views/shows.list (not in git).
+#
+# Format:  path/inside/archive|Show Name (Year)
+Superheroes/Some Show Season 1|Some Show (2021)
+Collections/A Movie (2008)/Spin-off Series S01|Spin-off Series (2022)
+
+# Lines starting with ! exclude a top-level folder from the movies view
+!TV series

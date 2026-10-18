@@ -1,0 +1,7 @@
+# /etc/prometheus/pve.yml (CT 102), chown prometheus:prometheus, chmod 600
+# Real token lives in the password manager, NOT in git.
+default:
+  user: prometheus@pve
+  token_name: exporter
+  token_value: REPLACE_WITH_TOKEN
+  verify_ssl: false

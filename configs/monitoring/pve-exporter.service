@@ -1,0 +1,12 @@
+# /etc/systemd/system/pve-exporter.service (CT 102)
+[Unit]
+Description=Prometheus Proxmox VE Exporter
+After=network-online.target
+
+[Service]
+User=prometheus
+ExecStart=/opt/pve-exporter/bin/pve_exporter --config.file /etc/prometheus/pve.yml --web.listen-address 127.0.0.1:9221
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
