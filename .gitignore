@@ -1,0 +1,9 @@
+# Never commit secrets
+*.env
+*secret*
+*token*
+pve.yml
+!pve.yml.example
+*.key
+*.pem
+.DS_Store
