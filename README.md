@@ -102,3 +102,16 @@ docs/       build notes, runbook, decisions
 ```
 
 Secrets (API tokens, passwords, bot tokens) are **never** committed. See `.gitignore`.
+
+
+## The setup
+
+![The "data centre"](docs/images/hardware.jpg)
+
+| Proxmox | Grafana |
+|---|---|
+| ![Proxmox](docs/images/proxmox.png) | ![Grafana](docs/images/grafana.png) |
+
+| AdGuard Home | Jellyfin |
+|---|---|
+| ![AdGuard](docs/images/adguard.png) | ![Jellyfin](docs/images/jellyfin.png) |
