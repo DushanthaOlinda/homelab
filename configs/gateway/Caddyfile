@@ -1,0 +1,59 @@
+{
+	pki {
+		ca homelab {
+			name "Olinda Homelab CA"
+			root {
+				cert /etc/caddy/pki/root.crt
+				key /etc/caddy/pki/root.key
+			}
+		}
+	}
+}
+
+(homelab_tls) {
+	tls {
+		issuer internal {
+			ca homelab
+		}
+	}
+}
+
+proxmox.home.arpa {
+	import homelab_tls
+	reverse_proxy https://192.168.1.200:8006 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+jellyfin.home.arpa {
+	import homelab_tls
+	reverse_proxy 192.168.1.203:8096
+}
+
+grafana.home.arpa {
+	import homelab_tls
+	reverse_proxy 192.168.1.202:3000
+}
+
+prometheus.home.arpa {
+	import homelab_tls
+	reverse_proxy 192.168.1.202:9090
+}
+
+adguard.home.arpa {
+	import homelab_tls
+	reverse_proxy 192.168.1.201:80
+}
+
+home.home.arpa {
+	import homelab_tls
+	handle_path /bg/* {
+		root * /srv/homelab
+		file_server
+	}
+	handle {
+		reverse_proxy 127.0.0.1:3000
+	}
+}

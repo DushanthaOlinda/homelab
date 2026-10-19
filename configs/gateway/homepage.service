@@ -1,0 +1,15 @@
+[Unit]
+Description=Homepage dashboard
+After=network-online.target
+
+[Service]
+User=homepage
+WorkingDirectory=/opt/homepage
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+Environment=HOMEPAGE_ALLOWED_HOSTS=home.home.arpa
+ExecStart=/usr/local/bin/pnpm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

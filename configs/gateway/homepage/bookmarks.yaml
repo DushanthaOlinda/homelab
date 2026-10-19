@@ -1,0 +1,10 @@
+- Links:
+    - GitHub repo:
+        - icon: github.png
+          href: https://github.com/DushanthaOlinda/homelab
+    - Tailscale:
+        - icon: tailscale.png
+          href: https://login.tailscale.com/admin/machines
+    - Router:
+        - icon: mdi-router-wireless
+          href: http://192.168.1.1

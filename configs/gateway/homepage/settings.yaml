@@ -1,0 +1,22 @@
+title: Olinda's Homelab
+theme: dark
+color: stone
+headerStyle: clean
+cardBlur: md
+hideVersion: true
+statusStyle: dot
+useEqualHeights: true
+background:
+  image: /bg/homelab-bg.jpg
+  brightness: 100
+  opacity: 100
+layout:
+  Infrastructure:
+    icon: mdi-server-network
+  Monitoring:
+    icon: mdi-chart-areaspline
+  Media:
+    icon: mdi-movie-open-play
+  Links:
+    style: row
+    columns: 3

@@ -1,0 +1,71 @@
+- Infrastructure:
+    - Proxmox:
+        icon: proxmox.png
+        href: https://proxmox.home.arpa
+        description: Hypervisor
+        siteMonitor: https://192.168.1.200:8006
+        widget:
+          type: proxmox
+          url: https://192.168.1.200:8006
+          username: homepage@pve!dashboard
+          password: "{{HOMEPAGE_VAR_PROXMOX_TOKEN}}"
+          node: pve
+    - AdGuard Home:
+        icon: adguard-home.png
+        href: https://adguard.home.arpa
+        description: DNS filtering · CT 101
+        siteMonitor: http://192.168.1.201
+        proxmoxNode: pve
+        proxmoxVMID: 101
+        proxmoxType: lxc
+        showStats: true
+        widget:
+          type: adguard
+          url: http://192.168.1.201
+          username: "{{HOMEPAGE_VAR_ADGUARD_USER}}"
+          password: "{{HOMEPAGE_VAR_ADGUARD_PASS}}"
+    - Gateway:
+        icon: caddy.png
+        href: https://home.home.arpa
+        description: Caddy + Homepage · CT 104
+        proxmoxNode: pve
+        proxmoxVMID: 104
+        proxmoxType: lxc
+        showStats: true
+
+- Monitoring:
+    - Grafana:
+        icon: grafana.png
+        href: https://grafana.home.arpa
+        description: Dashboards & alerts · CT 102
+        siteMonitor: http://192.168.1.202:3000
+        proxmoxNode: pve
+        proxmoxVMID: 102
+        proxmoxType: lxc
+        showStats: true
+    - Prometheus:
+        icon: prometheus.png
+        href: https://prometheus.home.arpa
+        description: Metrics · CT 102
+        siteMonitor: http://192.168.1.202:9090
+        widget:
+          type: prometheus
+          url: http://192.168.1.202:9090
+
+- Media:
+    - Jellyfin:
+        icon: jellyfin.png
+        href: https://jellyfin.home.arpa
+        description: Movies & shows · CT 103
+        siteMonitor: http://192.168.1.203:8096
+        proxmoxNode: pve
+        proxmoxVMID: 103
+        proxmoxType: lxc
+        showStats: true
+        widget:
+          type: jellyfin
+          url: http://192.168.1.203:8096
+          key: "{{HOMEPAGE_VAR_JELLYFIN_KEY}}"
+          enableBlocks: true
+          enableNowPlaying: true
+          version: 2
