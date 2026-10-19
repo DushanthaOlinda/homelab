@@ -9,16 +9,29 @@
 - [x] External drives mounted (archive read-only)
 - [x] Jellyfin with Intel Quick Sync, libraries organised
 - [x] SD card verified with `f3` (0 errors across ~233 GB)
+- [x] SD card registered as Proxmox backup storage ("is a mountpoint")
+- [x] Nightly container backups to the SD card (7 daily + 4 weekly)
+- [x] Irreplaceable data copied to the SD card (92,764 files, verified)
+- [x] Gateway (CT 104): Caddy reverse proxy, `*.home.arpa` names
+- [x] Local HTTPS with a name-constrained CA (trusted on Mac + iPhone)
+- [x] Homepage dashboard with live widgets, secrets kept out of config
 
 ## Next
-- [ ] Register SD card as Proxmox backup storage ("is a mountpoint")
-- [ ] Copy irreplaceable data (~67 GB) to the SD card → second copy
-- [ ] Nightly vzdump of CT 101–103 to the SD card + retention policy
+- [ ] WD archive drive: move to a USB 3.0 port / powered enclosure, remount
+- [ ] Sort misfiled episodes (numeric file names) on the WD drive into shows
+- [ ] Alert: WD drive not mounted
+- [ ] Re-enable SMART monitoring safely (skip sleeping drives)
+- [ ] Temperature alert (CPU > 85 °C for 10 min)
+- [ ] Route Proxmox backup notifications to Telegram
+- [ ] Test-restore a container backup
+- [ ] Scheduled sync of personal files to the SD card
 - [ ] Offsite copy (3-2-1)
+- [ ] Kubernetes cluster (VMs) + Istio service mesh lab
+- [ ] Try Pi-hole (+ Unbound) and compare with AdGuard Home
 - [ ] Immich (self-hosted photos) once backups are in place
 - [ ] Tailscale ACLs (restrict less-trusted devices)
 - [ ] Alert rules exported as YAML into `configs/alerting/`
 - [ ] Better Telegram message templates (distinct resolved text)
-- [ ] Temperature / SMART alerts
 - [ ] Longer Ethernet cable → move server off the bed onto a desk
+- [ ] Re-IP home network away from 192.168.1.0/24 (avoid overlap on remote networks)
 - [ ] Infrastructure as code: Terraform (bpg/proxmox) + Ansible for the containers
