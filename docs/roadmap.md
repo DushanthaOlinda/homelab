@@ -15,13 +15,14 @@
 - [x] Gateway (CT 104): Caddy reverse proxy, `*.home.arpa` names
 - [x] Local HTTPS with a name-constrained CA (trusted on Mac + iPhone)
 - [x] Homepage dashboard with live widgets, secrets kept out of config
+- [x] Alert: external drive missing (covers all 3 drives)
+- [x] Temperature alert (CPU > 85 °C for 10 min)
 
 ## Next
 - [ ] WD archive drive: move to a USB 3.0 port / powered enclosure, remount
 - [ ] Sort misfiled episodes (numeric file names) on the WD drive into shows
 - [ ] Alert: WD drive not mounted
 - [ ] Re-enable SMART monitoring safely (skip sleeping drives)
-- [ ] Temperature alert (CPU > 85 °C for 10 min)
 - [ ] Route Proxmox backup notifications to Telegram
 - [ ] Test-restore a container backup
 - [ ] Scheduled sync of personal files to the SD card
