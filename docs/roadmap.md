@@ -17,6 +17,7 @@
 - [x] Homepage dashboard with live widgets, secrets kept out of config
 - [x] Alert: external drive missing (covers all 3 drives)
 - [x] Temperature alert (CPU > 85 °C for 10 min)
+- [x] Test-restore a container backup (CT 101 → temporary CT 901, verified)
 
 ## Next
 - [ ] WD archive drive: move to a USB 3.0 port / powered enclosure, remount
@@ -24,7 +25,6 @@
 - [ ] Alert: WD drive not mounted
 - [ ] Re-enable SMART monitoring safely (skip sleeping drives)
 - [ ] Route Proxmox backup notifications to Telegram
-- [ ] Test-restore a container backup
 - [ ] Scheduled sync of personal files to the SD card
 - [ ] Offsite copy (3-2-1)
 - [ ] Kubernetes cluster (VMs) + Istio service mesh lab
