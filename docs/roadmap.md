@@ -20,9 +20,9 @@
 - [x] Test-restore a container backup (CT 101 → temporary CT 901, verified)
 
 ## Next
-- [ ] WD archive drive: move to a USB 3.0 port / powered enclosure, remount
-- [ ] Sort misfiled episodes (numeric file names) on the WD drive into shows
-- [ ] Alert: WD drive not mounted
+- [x] WD archive drive: move to a USB 3.0 port / powered enclosure, remount
+- [x] Sort misfiled episodes (numeric file names) on the WD drive into shows
+- [x] Alert: external drive missing (all 3 drives)
 - [ ] Re-enable SMART monitoring safely (skip sleeping drives)
 - [ ] Route Proxmox backup notifications to Telegram
 - [ ] Scheduled sync of personal files to the SD card

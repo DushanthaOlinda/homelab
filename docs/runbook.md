@@ -31,3 +31,23 @@ Run detached so a dropped SSH session doesn't kill them:
 sudo tmux new -d -s job 'command; exec bash'
 sudo tmux capture-pane -pt job | tail
 ```
+
+## Restore a container from backup
+
+    ls -lh /mnt/sdcard/proxmox/dump/ | grep <ID>
+
+Replace a broken container (same ID, same IP):
+
+    sudo pct stop <ID>
+    sudo pct restore <ID> /mnt/sdcard/proxmox/dump/<file>.tar.zst --storage local-lvm --force 1
+    sudo pct start <ID>
+
+Test a restore without touching the live one:
+
+    sudo pct restore 9<ID> <file> --storage local-lvm --unique 1
+    sudo pct set 9<ID> --delete net0     # avoid IP clash
+    sudo pct set 9<ID> --onboot 0
+    sudo pct start 9<ID>                 # check, then:
+    sudo pct stop 9<ID> && sudo pct destroy 9<ID> --purge
+
+Last verified 2026-10-19: CT 101 → CT 901, AdGuard listening on 53/80.

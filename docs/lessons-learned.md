@@ -20,3 +20,24 @@
 - **Phone photos carry GPS coordinates.** Strip location data before publishing any photo of the setup.
 - **A loose Ethernet cable is a single point of failure.** A bumped cable dropped the server for
   3 seconds, which also means DNS for every device using AdGuard. Seat cables firmly; plan for a fallback.
+- **Mac-to-Mac at home: SSH + Universal Control, not Screen Sharing/AirPlay.**
+  SSH (key-only, `from=` home LAN, `!192.168.1.200` to block the Tailscale
+  subnet-router path, `AddressFamily inet`) handles git and files. Screen Sharing
+  and AirPlay-as-extended-display were slow over Wi-Fi, and a half-closed Screen
+  Sharing session locked the display brightness until a reboot. Both turned off.
+- **A bus-powered drive on a USB 2.0 port dropped off after spin-down.** SMART
+  polling woke it, spin-up drew too much power, the bridge crashed. Moved to
+  USB 3.0; SMART timer disabled until it can skip sleeping drives.
+- **Debian's node-exporter hides `/mnt` and `/media` by default.** The
+  "drive missing" alert saw nothing until the exclude flag was overridden in
+  `/etc/default/prometheus-node-exporter`. Check `--help` for real defaults.
+- **Building views isn't enough, the libraries must use them.** Movies still
+  pointed at raw `/media/wd`, so every episode became a "movie" (2,731 → 666
+  after fixing). Check `/var/lib/jellyfin/root/default/*/*.mblink`.
+- **Jellyfin's A–Z filter uses the sort title.** Watch-order sort titles hid
+  Iron Man under "M"; ordered playlists are the right tool.
+- **`count()` of nothing is "No data", not 0.** Append `or vector(0)`.
+- **macOS `scp` doesn't expand `{a,b}` on the remote side.** Use `tar` over ssh.
+- **SSH `from=` restrictions are address-family specific.** A Bonjour `.local`
+  name connected over IPv6 link-local and the IPv4-only `from=` rejected the
+  key. Fixed with `AddressFamily inet`.

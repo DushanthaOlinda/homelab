@@ -42,3 +42,7 @@ are referenced as `{{HOMEPAGE_VAR_*}}`, so the YAML in this repo has no secrets.
 - Homepage only serves images present at build time: the background is served
   by Caddy from `/srv/homelab` instead.
 - `curl -I` against Proxmox returns 501: pveproxy doesn't implement HEAD.
+
+**Get the CA on a new device:** `https://home.home.arpa/bg/homelab-ca.crt`
+SHA-256 fingerprint (verify before trusting):
+`81:3C:93:C2:29:AA:2A:BE:A5:0F:DD:0E:2B:C2:CF:46:7E:8D:D4:92:6F:5E:A2:D1:E8:40:30:ED:E8:6A:F0:CA`
