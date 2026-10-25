@@ -46,3 +46,7 @@ are referenced as `{{HOMEPAGE_VAR_*}}`, so the YAML in this repo has no secrets.
 **Get the CA on a new device:** `https://home.home.arpa/bg/homelab-ca.crt`
 SHA-256 fingerprint (verify before trusting):
 `81:3C:93:C2:29:AA:2A:BE:A5:0F:DD:0E:2B:C2:CF:46:7E:8D:D4:92:6F:5E:A2:D1:E8:40:30:ED:E8:6A:F0:CA`
+
+**Chain:** leaf (12 h, issued by Caddy) → `Olinda Homelab Intermediate` (ours,
+expires 2028-10-24, name-constrained) → `Olinda Homelab CA` (trusted on devices).
+Caddy is given both root and intermediate, so it never generates its own.

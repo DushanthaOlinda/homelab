@@ -36,3 +36,5 @@
 - [ ] Longer Ethernet cable → move server off the bed onto a desk
 - [ ] Re-IP home network away from 192.168.1.0/24 (avoid overlap on remote networks)
 - [ ] Infrastructure as code: Terraform (bpg/proxmox) + Ansible for the containers
+- [ ] Renew the gateway intermediate CA before 2028-10-24
+- [ ] Move Caddy to the official repo (Debian's 2.6.2 is old)

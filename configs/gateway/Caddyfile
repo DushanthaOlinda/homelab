@@ -6,6 +6,10 @@
 				cert /etc/caddy/pki/root.crt
 				key /etc/caddy/pki/root.key
 			}
+			intermediate {
+				cert /etc/caddy/pki/intermediate.crt
+				key /etc/caddy/pki/intermediate.key
+			}
 		}
 	}
 }

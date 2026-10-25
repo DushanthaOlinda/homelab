@@ -41,3 +41,10 @@
 - **SSH `from=` restrictions are address-family specific.** A Bonjour `.local`
   name connected over IPv6 link-local and the IPv4-only `from=` rejected the
   key. Fixed with `AddressFamily inet`.
+- **Caddy 2.6.2 swapped in its own root when it rotated the intermediate.** A
+  week after setup, the auto-renewed intermediate was signed by a Caddy-generated
+  "Olinda Homelab CA - 2026 ECC Root" instead of our name-constrained root, so every
+  device saw ERR_CERT_AUTHORITY_INVALID. Found by comparing the intermediate's
+  Authority Key Identifier with the trusted root's Subject Key Identifier. Fix: our
+  own 2-year intermediate (also name-constrained) passed to Caddy via
+  `pki { ca { intermediate { ... } } }`, so Caddy never generates one.
