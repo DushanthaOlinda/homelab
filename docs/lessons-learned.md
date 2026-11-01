@@ -48,3 +48,11 @@
   Authority Key Identifier with the trusted root's Subject Key Identifier. Fix: our
   own 2-year intermediate (also name-constrained) passed to Caddy via
   `pki { ca { intermediate { ... } } }`, so Caddy never generates one.
+
+- **The laptop's SD card reader fell asleep and didn't wake up.** Runtime power
+  management on the Realtek reader (rtsx_pci) caused `mmc0: error -110 doing runtime
+  resume` → card "removed" → ext4 pulled a minute after boot, so backups had nowhere
+  to go. Fixed with a udev rule setting the reader's PCI `power/control` to `on`.
+- **A power cut + "off until someone presses the button" = a 6-day outage nobody
+  noticed.** Monitoring on the same box can't report its own death. Fixes: BIOS
+  Wake on AC, an external dead-man's-switch (healthchecks.io), and eventually a UPS.
